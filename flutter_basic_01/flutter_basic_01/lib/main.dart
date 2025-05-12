@@ -50,6 +50,9 @@ class MyHomePage extends StatelessWidget {
       body: Container( //중간 컨텐츠
         child: Text('Hello, Flutter!'),
         padding: EdgeInsets.all(30),  //상하좌우 모든 방향에 똑같은 크기의 여백을 (30만큼) 넣겠다. 
+        color: Colors.blueAccent,
+        height: 300,
+        width: 300,
       ),
     );
   }
