@@ -36,18 +36,18 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  final String title;
-  MyHomePage({required this.title});
+  final String title; //클래스 생성 시에만 설정되고 이후 변경 X
+  MyHomePage({required this.title});  //title을 무조건 함께 작성해야 함함
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: AppBar( //최상단 
         title: Text(
           title,
-        ),
+        ),  //title을 최상단 AppBar에 작성
       ),
-      body: Center(
+      body: Center( //중간 컨텐츠츠
         child: Text('Hello, Flutter!'),
       ),
     );
