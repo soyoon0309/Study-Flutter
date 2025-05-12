@@ -37,18 +37,19 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatelessWidget {
   final String title; //클래스 생성 시에만 설정되고 이후 변경 X
-  MyHomePage({required this.title});  //title을 무조건 함께 작성해야 함함
+  MyHomePage({required this.title});  //title을 무조건 함께 작성해야 함 
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar( //최상단 
         title: Text(
-          title,
+          this.title,
         ),  //title을 최상단 AppBar에 작성
       ),
-      body: Center( //중간 컨텐츠츠
+      body: Container( //중간 컨텐츠
         child: Text('Hello, Flutter!'),
+        padding: EdgeInsets.all(30),  //상하좌우 모든 방향에 똑같은 크기의 여백을 (30만큼) 넣겠다. 
       ),
     );
   }
