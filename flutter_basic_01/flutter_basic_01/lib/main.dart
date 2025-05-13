@@ -47,7 +47,7 @@ class MyHomePage extends StatelessWidget {
           this.title,
         ),  //title을 최상단 AppBar에 작성
       ),
-      body: Center( //중간 컨텐츠
+      body: Column( //중간 컨텐츠
         //child: Image.asset('images/damgom_Img1.jpeg',
         //width: 250,
         //height: 250,
@@ -56,14 +56,18 @@ class MyHomePage extends StatelessWidget {
         //width: 250,
         //height: 250,
         //),
-        child: Text('Hello, Text Widget!',
-        style: TextStyle(
-          fontSize: 25,
-          fontFamily: 'Bagel',
-          color: Colors.green,
+        //child: Text('Hello, Text Widget!',
+        //style: TextStyle(
+        //  fontSize: 25,
+        //  fontFamily: 'Bagel',
+        //  color: Colors.green,
+        //),
+        children: [
+          Text('1. First String', style: TextStyle(fontSize: 25)),
+          Text('2. Second String', style: TextStyle(fontSize: 20)),
+          Text('3. Third String', style: TextStyle(fontSize: 15)),
+        ],
         ),
-        ),
-      ),
     );
   }
 }
