@@ -48,14 +48,21 @@ class MyHomePage extends StatelessWidget {
         ),  //title을 최상단 AppBar에 작성
       ),
       body: Center( //중간 컨텐츠
-        child: Image.asset('images/damgom_Img1.jpeg',
-        width: 250,
-        height: 250,
-        ),
+        //child: Image.asset('images/damgom_Img1.jpeg',
+        //width: 250,
+        //height: 250,
+        //),
         //child: Image.network('https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA1MThfOTcg%2FMDAxNjUyODAwNTA4MzQ4.OX1vub2Aep92Yo0_abPuPLETrWKIp5kd2OkK2soJ5mgg.svrJ0DLOliNrod8u8maFQ2IkiA_HbYJDJuvDMS_ECxIg.JPEG.myqwer0524%2FIMG_3574.JPG&type=sc960_832',
         //width: 250,
         //height: 250,
         //),
+        child: Text('Hello, Text Widget!',
+        style: TextStyle(
+          fontSize: 25,
+          fontFamily: 'Bagel',
+          color: Colors.green,
+        ),
+        ),
       ),
     );
   }
