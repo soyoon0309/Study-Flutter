@@ -37,6 +37,7 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatelessWidget {
   final String title; //클래스 생성 시에만 설정되고 이후 변경 X
+  //List<Widget> myChildren = [];
   MyHomePage({required this.title});  //title을 무조건 함께 작성해야 함 
 
   @override
@@ -48,23 +49,25 @@ class MyHomePage extends StatelessWidget {
         ),  //title을 최상단 AppBar에 작성
       ),
       body: Center( //중간 컨텐츠
-        /*child: Column(  //Column을 Center의 child로 지정해서 Column 안의 값이 화면 배치에서 Center에 위치하도록 함
-          mainAxisAlignment: MainAxisAlignment.center, //세로 중앙정렬  (기본값이 start이므로 center로 확인)
-        crossAxisAlignment: CrossAxisAlignment.start, //가로 왼쪽정렬 (기본값이 center이므로 start로 확인)
-        children: [
-          Text('1. First String', style: TextStyle(fontSize: 25)),
-          Text('2. Second String', style: TextStyle(fontSize: 20)),
-          Text('3. Third String', style: TextStyle(fontSize: 15)),
-        ],  //children
-        ),*/  //Column
-        child: Row(
+        //child: ListView(  //Column을 Center의 child로 지정해서 Column 안의 값이 화면 배치에서 Center에 위치하도록 함
+          //mainAxisAlignment: MainAxisAlignment.center, //세로 중앙정렬  (기본값이 start이므로 center로 확인)
+        //crossAxisAlignment: CrossAxisAlignment.start, //가로 왼쪽정렬 (기본값이 center이므로 start로 확인)
+        //scrollDirection: Axis.horizontal,
+        child: ListView.builder(
+          itemCount: 50,
+          itemBuilder:(BuildContext context, int index) {
+            return Text('$index' +  ' Text', style: TextStyle(fontSize: 25));
+          },
+        ),  //ListView.builder
+        //),  //ListView
+        /*child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Text('1. first', style: TextStyle(fontSize: 25)),
             Text('2. Second', style: TextStyle(fontSize: 20)),
             Text('3. Third', style: TextStyle(fontSize: 15)),
           ],
-        ),
+        ),*/
         //child: Image.asset('images/damgom_Img1.jpeg',
         //width: 250,
         //height: 250,
