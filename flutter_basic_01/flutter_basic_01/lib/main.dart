@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_basic_01/screens/first_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,89 +29,11 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
+        primarySwatch: Colors.lightBlue,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.greenAccent),
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: FirstScreen(),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  final String title; //클래스 생성 시에만 설정되고 이후 변경 X
-  //List<Widget> myChildren = [];
-  MyHomePage({required this.title});  //title을 무조건 함께 작성해야 함 
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar( //최상단 
-        title: Text(
-          this.title,
-        ),  //title을 최상단 AppBar에 작성
-      ),
-      body: Center( //중간 컨텐츠
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextButton(onPressed: () {}, child: Text('TextButton')),
-            Padding(padding: EdgeInsets.all(20)),
-            ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor:Colors.amberAccent),
-            onPressed: () {}, child: Text('Elevated Button')),
-            Padding(padding: EdgeInsets.all(20)),
-            OutlinedButton(onPressed: () {}, child: Text('OutlinedButton')),
-            Padding(padding: EdgeInsets.all(20)),
-            IconButton(onPressed: () {}, icon: Icon(Icons.star)),
-          ],
-        ),
-      /*child: Stack(
-        children: [
-          Image.asset('images/damgom_Img1.jpeg'),
-          Positioned(
-            left: 0,
-            bottom: 0,
-            child: Image.network('https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA1MThfOTcg%2FMDAxNjUyODAwNTA4MzQ4.OX1vub2Aep92Yo0_abPuPLETrWKIp5kd2OkK2soJ5mgg.svrJ0DLOliNrod8u8maFQ2IkiA_HbYJDJuvDMS_ECxIg.JPEG.myqwer0524%2FIMG_3574.JPG&type=sc960_832',
-              width: 150,
-              height: 150,
-        ),
-          )
-          
-        ],
-      ),*/
-        //child: ListView(  //Column을 Center의 child로 지정해서 Column 안의 값이 화면 배치에서 Center에 위치하도록 함
-          //mainAxisAlignment: MainAxisAlignment.center, //세로 중앙정렬  (기본값이 start이므로 center로 확인)
-        //crossAxisAlignment: CrossAxisAlignment.start, //가로 왼쪽정렬 (기본값이 center이므로 start로 확인)
-        //scrollDirection: Axis.horizontal,
-        /*child: ListView.builder(
-          itemCount: 50,
-          itemBuilder:(BuildContext context, int index) {
-            return Text('$index' +  ' Text', style: TextStyle(fontSize: 25));
-          },
-        ),*/  //ListView.builder
-        //),  //ListView
-        /*child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Text('1. first', style: TextStyle(fontSize: 25)),
-            Text('2. Second', style: TextStyle(fontSize: 20)),
-            Text('3. Third', style: TextStyle(fontSize: 15)),
-          ],
-        ),*/
-        //child: Image.asset('images/damgom_Img1.jpeg',
-        //width: 250,
-        //height: 250,
-        //),  //child
-        //child: Image.network('https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA1MThfOTcg%2FMDAxNjUyODAwNTA4MzQ4.OX1vub2Aep92Yo0_abPuPLETrWKIp5kd2OkK2soJ5mgg.svrJ0DLOliNrod8u8maFQ2IkiA_HbYJDJuvDMS_ECxIg.JPEG.myqwer0524%2FIMG_3574.JPG&type=sc960_832',
-        //width: 250,
-        //height: 250,
-        //),  //child
-        //child: Text('Hello, Text Widget!',
-        //style: TextStyle(
-        //  fontSize: 25,
-        //  fontFamily: 'Bagel',
-        //  color: Colors.green,
-        //  ) //TextStyle
-        //),  //child
-        ), //Center
-    );
-  }
-}
