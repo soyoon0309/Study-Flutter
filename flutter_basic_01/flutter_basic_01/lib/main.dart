@@ -49,7 +49,20 @@ class MyHomePage extends StatelessWidget {
         ),  //title을 최상단 AppBar에 작성
       ),
       body: Center( //중간 컨텐츠
-      child: Stack(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TextButton(onPressed: () {}, child: Text('TextButton')),
+            Padding(padding: EdgeInsets.all(20)),
+            ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor:Colors.amberAccent),
+            onPressed: () {}, child: Text('Elevated Button')),
+            Padding(padding: EdgeInsets.all(20)),
+            OutlinedButton(onPressed: () {}, child: Text('OutlinedButton')),
+            Padding(padding: EdgeInsets.all(20)),
+            IconButton(onPressed: () {}, icon: Icon(Icons.star)),
+          ],
+        ),
+      /*child: Stack(
         children: [
           Image.asset('images/damgom_Img1.jpeg'),
           Positioned(
@@ -62,7 +75,7 @@ class MyHomePage extends StatelessWidget {
           )
           
         ],
-      ),
+      ),*/
         //child: ListView(  //Column을 Center의 child로 지정해서 Column 안의 값이 화면 배치에서 Center에 위치하도록 함
           //mainAxisAlignment: MainAxisAlignment.center, //세로 중앙정렬  (기본값이 start이므로 center로 확인)
         //crossAxisAlignment: CrossAxisAlignment.start, //가로 왼쪽정렬 (기본값이 center이므로 start로 확인)
