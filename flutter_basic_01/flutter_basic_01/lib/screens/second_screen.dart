@@ -11,7 +11,9 @@ class SecondScreen extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('This is Second Screen'),
-            ElevatedButton(onPressed: () {}, child: Text('Go to First Screen'))
+            ElevatedButton(onPressed: () {
+              Navigator.of(context).pop();  //뒤로가기 기능
+            }, child: Text('Go to First Screen'))
           ],
         ),
       ),
