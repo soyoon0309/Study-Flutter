@@ -3,16 +3,26 @@
 import 'package:flutter/material.dart';
 
 class DetailScreen extends StatelessWidget{
+  final String title;
+  final String subtitle;
+  final String description;
+  final String image;
+  DetailScreen({
+    required this.title,
+    required this.subtitle,
+    required this.description,
+    required this.image,
+  });
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text('OS? Oh Yes!'), //Book title (상단) 
+        title: Text(title), //Book title (상단) 
       ),
       body: ListView(
         children: [
-          Image.network('https://shopping-phinf.pstatic.net/main_3249666/32496660939.20230704085307.jpg?type=w300'),  //Book image
+          Image.network(image),  //Book image
           Padding(padding: EdgeInsets.all(3),
           ),
           Row(
@@ -26,14 +36,14 @@ class DetailScreen extends StatelessWidget{
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      child: Text('OS? Oh Yes!', 
+                      child: Text(title, 
                         style: TextStyle(
                           fontSize: 23, 
                           fontWeight: FontWeight.bold,
                         ),
                       ), //Book title
                     ),
-                    Text('누워서 보는 운영체제 이야기',
+                    Text(subtitle,
                     style: TextStyle(fontSize: 18, color: Colors.blueGrey)
                     ), //Book subtitle 
                   ],
@@ -93,9 +103,7 @@ class DetailScreen extends StatelessWidget{
           ),
           Container(
             padding: EdgeInsets.all(15),
-            child: Text(
-              '현재 컴퓨터는 개인적 용도로 사용되는 모바일용 PC로부터 시작하여 초고속 과학계산을 위한 슈퍼컴퓨터에 이르기까지, 크기와 가격 및 성능에 있어서 매우 다양한 종류의 컴퓨터들이 존재하고 있다. 그런데 흥미로운 점은 그러한 컴퓨터들의 기본 구조와 동작 원리는 거의 동일하다는 것이다. 본 저서에서는 컴퓨터 하드웨어의 기본 원리와 핵심 기술들을 이해하기 쉽도록 간결하게 설명하였으며, 컴퓨터의 성능을 높이기 위하여 최근에 새로이 개발된 멀티-코어 프로세서, GPU, DDR SDRAM 및 SSD를 포함한 각종 보조저장장치를 비롯한 첨단 컴퓨터 기술들에 대하여 전반적으로 소개하고 있다.'
-            ),
+            child: Text(description),
           )
         ],
       )

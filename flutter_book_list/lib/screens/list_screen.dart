@@ -1,6 +1,7 @@
 //lib/screens/list_screen.dart
 //기본 화면
 import 'package:flutter/material.dart';
+import 'package:flutter_book_list/screens/detail_screen.dart';
 
 class ListScreen extends StatelessWidget{
   @override
@@ -60,7 +61,17 @@ class BookTile extends StatelessWidget{
     return ListTile(
       title: Text(title),
       leading: Image.network(image),
-      onTap: () {}, //title, subtitle, description, image data를 다음 화면으로 넘기며 이동 
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => DetailScreen(
+            title: title,
+            subtitle: subtitle,
+            description: description,
+            image: image,
+            ),
+          ),
+        );
+      }, //title, subtitle, description, image data를 다음 화면으로 넘기며 이동 
     );
   }
 }
