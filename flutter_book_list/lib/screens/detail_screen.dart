@@ -1,28 +1,23 @@
 //lib/screens/detail_screen.dart
 //세부 사항 출력 창
 import 'package:flutter/material.dart';
+import 'package:flutter_book_list/models/book.dart';
 
 class DetailScreen extends StatelessWidget{
-  final String title;
-  final String subtitle;
-  final String description;
-  final String image;
+  final Book book;
   DetailScreen({
-    required this.title,
-    required this.subtitle,
-    required this.description,
-    required this.image,
+    required this.book
   });
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text(title), //Book title (상단) 
+        title: Text(book.title), //Book title (상단) 
       ),
       body: ListView(
         children: [
-          Image.network(image),  //Book image
+          Image.network(book.image),  //Book image
           Padding(padding: EdgeInsets.all(3),
           ),
           Row(
@@ -36,14 +31,14 @@ class DetailScreen extends StatelessWidget{
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      child: Text(title, 
+                      child: Text(book.title, 
                         style: TextStyle(
                           fontSize: 23, 
                           fontWeight: FontWeight.bold,
                         ),
                       ), //Book title
                     ),
-                    Text(subtitle,
+                    Text(book.subtitle,
                     style: TextStyle(fontSize: 18, color: Colors.blueGrey)
                     ), //Book subtitle 
                   ],
@@ -103,7 +98,7 @@ class DetailScreen extends StatelessWidget{
           ),
           Container(
             padding: EdgeInsets.all(15),
-            child: Text(description),
+            child: Text(book.description),
           )
         ],
       )
