@@ -3,6 +3,19 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:sprintf/sprintf.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+
+void showToast(String message) {
+    Fluttertoast.showToast(
+      msg: message,
+      toastLength: Toast.LENGTH_LONG,
+      gravity: ToastGravity.CENTER,
+      timeInSecForIosWeb: 5,
+      backgroundColor: Colors.grey,
+      textColor: Colors.white,
+      fontSize: 16.0,
+      );
+  }
 
 enum TimerStatus {running, paused, stopped, resting}
 
@@ -12,8 +25,8 @@ class TimerScreen extends StatefulWidget{
 }
 
 class _TimerScreenState extends State<TimerScreen>{
-  static const WORK_SECONDS = 25;
-  static const REST_SECONDS = 5;
+  static const WORK_SECONDS = 25; //*60
+  static const REST_SECONDS = 5;  //*60
 
   late TimerStatus _timerStatus;
   late int _timer;
@@ -78,7 +91,7 @@ class _TimerScreenState extends State<TimerScreen>{
           break;
         case TimerStatus.running:
           if(_timer <= 0) {
-            print("작업 완료!");
+            showToast("작업 완료!");
             rest();
           } else {
             setState(() {
@@ -91,7 +104,7 @@ class _TimerScreenState extends State<TimerScreen>{
             setState(() {
               _pomodoroCount += 1;
             });
-            print("오늘 $_pomodoroCount개의 뽀모도로를 달성했습니다.");
+            showToast("오늘 $_pomodoroCount개의 뽀모도로를 달성했습니다.");
             t.cancel();
             stop();
           } else {
